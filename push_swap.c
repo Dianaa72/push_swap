@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:23:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/20 01:49:46 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/20 02:08:40 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int main(int argc, char *argv[])
     if (argc < 2)
         return (write(2, "Argumentos insuficientes\n", 26), 0);    
     // if (argv[1][0] == '-' & argv[1][1] == '-')
-    //     HAY FLAG
+    //     HAY UNA FLAG
     return (0);
 }
