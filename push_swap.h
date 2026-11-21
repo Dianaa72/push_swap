@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/20 01:41:46 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/21 20:31:51 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define PUSH_SWAP
 
 /* SYSTEM LIBRARIES */
-# include <unistd.h>
-# include <stdlib.h>
 
-/* UTILS */
+# include "libft/libft.h"
 
-/* PROTOTYPES */
+/* PUSH SWAP MAIN CHECKER */
+int	ft_isdash(int c);
+int has_morethan_digits(char *s);
 
 #endif
