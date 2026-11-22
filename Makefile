@@ -1,52 +1,58 @@
 NAME = push_swap.a
 B_NAME = $(basename $(NAME))
 
-DIR_L = ./libft/
+LIB = ./libft/
+MAIN = ./main_check/
+MOVE = ./movements/
+LIBFT = \
+	$(LIB)ft_isalpha.c\
+	$(LIB)ft_isdigit.c\
+	$(LIB)ft_isalnum.c\
+	$(LIB)ft_isascii.c\
+	$(LIB)ft_isprint.c\
+	$(LIB)ft_strlen.c\
+	$(LIB)ft_memset.c\
+	$(LIB)ft_bzero.c\
+	$(LIB)ft_memcpy.c\
+	$(LIB)ft_memmove.c\
+	$(LIB)ft_strlcpy.c\
+	$(LIB)ft_strlcat.c\
+	$(LIB)ft_toupper.c\
+	$(LIB)ft_tolower.c\
+	$(LIB)ft_strchr.c\
+	$(LIB)ft_strrchr.c\
+	$(LIB)ft_strncmp.c\
+	$(LIB)ft_memchr.c\
+	$(LIB)ft_memcmp.c\
+	$(LIB)ft_strnstr.c\
+	$(LIB)ft_atoi.c\
+	$(LIB)ft_calloc.c\
+	$(LIB)ft_strdup.c\
+	$(LIB)ft_substr.c\
+	$(LIB)ft_strjoin.c\
+	$(LIB)ft_strtrim.c\
+	$(LIB)ft_split.c\
+	$(LIB)ft_striteri.c\
+	$(LIB)ft_putchar_fd.c\
+	$(LIB)ft_putstr_fd.c\
+	$(LIB)ft_putendl_fd.c\
+	$(LIB)ft_putnbr_fd.c\
+	$(LIB)ft_lstadd_front.c\
+	$(LIB)ft_lstnew.c\
+	$(LIB)ft_lstsize.c\
+	$(LIB)ft_lstlast.c\
+	$(LIB)ft_lstadd_back.c\
+	$(LIB)ft_lstdelone.c\
+	$(LIB)ft_lstclear.c\
+	$(LIB)ft_itoa.c\
+	$(LIB)ft_strmapi.c\
+	$(LIB)ft_lstiter.c\
+	$(LIB)ft_lstmap.c\
+
 SOURCES = \
-	$(DIR_L)ft_isalpha.c\
-	$(DIR_L)ft_isdigit.c\
-	$(DIR_L)ft_isalnum.c\
-	$(DIR_L)ft_isascii.c\
-	$(DIR_L)ft_isprint.c\
-	$(DIR_L)ft_strlen.c\
-	$(DIR_L)ft_memset.c\
-	$(DIR_L)ft_bzero.c\
-	$(DIR_L)ft_memcpy.c\
-	$(DIR_L)ft_memmove.c\
-	$(DIR_L)ft_strlcpy.c\
-	$(DIR_L)ft_strlcat.c\
-	$(DIR_L)ft_toupper.c\
-	$(DIR_L)ft_tolower.c\
-	$(DIR_L)ft_strchr.c\
-	$(DIR_L)ft_strrchr.c\
-	$(DIR_L)ft_strncmp.c\
-	$(DIR_L)ft_memchr.c\
-	$(DIR_L)ft_memcmp.c\
-	$(DIR_L)ft_strnstr.c\
-	$(DIR_L)ft_atoi.c\
-	$(DIR_L)ft_calloc.c\
-	$(DIR_L)ft_strdup.c\
-	$(DIR_L)ft_substr.c\
-	$(DIR_L)ft_strjoin.c\
-	$(DIR_L)ft_strtrim.c\
-	$(DIR_L)ft_split.c\
-	$(DIR_L)ft_striteri.c\
-	$(DIR_L)ft_putchar_fd.c\
-	$(DIR_L)ft_putstr_fd.c\
-	$(DIR_L)ft_putendl_fd.c\
-	$(DIR_L)ft_putnbr_fd.c\
-	$(DIR_L)ft_lstadd_front.c\
-	$(DIR_L)ft_lstnew.c\
-	$(DIR_L)ft_lstsize.c\
-	$(DIR_L)ft_lstlast.c\
-	$(DIR_L)ft_lstadd_back.c\
-	$(DIR_L)ft_lstdelone.c\
-	$(DIR_L)ft_lstclear.c\
-	$(DIR_L)ft_itoa.c\
-	$(DIR_L)ft_strmapi.c\
-	$(DIR_L)ft_lstiter.c\
-	$(DIR_L)ft_lstmap.c\
-	push_swap_main_checker.c\
+	$(LIBFT)\
+	$(MAIN)push_swap_main_checker.c\
+	$(MOVE)list_utils.c\
 
 OBJS = $(SOURCES:.c=.o)
 
@@ -86,6 +92,7 @@ simple: all
 
 oclean: fclean
 	rm -f *.out
+	rm -f *.o
 
 nc:
 	norminette *.c
@@ -96,7 +103,7 @@ nl:
 g:
 	git pull
 	git add .
-	git commit -m "Seguimos con parseos y empezamos cosas de listas $$(date +%H:%M:%S)"
+	git commit -m "Terminamos un par de funciones de listas y añadimos cosas al Makefile $$(date +%H:%M:%S)"
 	git push
 	git status
 	git log -1 --oneline

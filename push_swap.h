@@ -6,12 +6,18 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/22 02:08:41 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/22 14:47:35 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
+
+/* SYSTEM LIBRARIES */
+#include <stddef.h>
+
+/* OWN LIBRARIES */
+# include "libft/libft.h"
 
 /* STRUCTS */
 
@@ -27,13 +33,8 @@ typedef struct s_stack
 {
 	t_node			*head;
 	size_t			size;
-	char name
+	char 			name;
 }					t_stack;
-
-/* SYSTEM LIBRARIES */
-
-/* OWN LIBRARIES */
-# include "libft/libft.h"
 
 /* PUSH SWAP MAIN CHECKER */
 
