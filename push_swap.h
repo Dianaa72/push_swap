@@ -6,19 +6,43 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/21 20:31:51 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/22 02:08:41 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
+/* STRUCTS */
+
+typedef struct s_node
+{
+	struct s_node	*prev;
+	struct s_node	*next;
+	int				value;
+	size_t			index;
+}					t_node;
+
+typedef struct s_stack
+{
+	t_node			*head;
+	size_t			size;
+	char name
+}					t_stack;
+
 /* SYSTEM LIBRARIES */
 
+/* OWN LIBRARIES */
 # include "libft/libft.h"
 
 /* PUSH SWAP MAIN CHECKER */
-int	ft_isdash(int c);
-int has_morethan_digits(char *s);
+
+int					ft_istarget(int target, int c);
+int					has_nulls(char **s);
+int					has_morethan_digits(char *s);
+int					has_spaces(char *s);
+int					full_dash_check(char **argv);
+
+/* LIST UTILS*/
 
 #endif

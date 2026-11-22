@@ -6,37 +6,26 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:23:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/21 20:36:45 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/22 01:37:56 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-    (void )argv;
-    if (argc < 2)
-        return (write(2, "Argumentos insuficientes\n", 26), 0);
-    argv++;
+	(void)argv;
+	if (argc < 2)
+		return (write(2, "\tArgumentos insuficientes\n", 26), 0);
+	argv++;
+    if (has_nulls(argv))
+        return (write(2, "\tArgumento nulo\n", 16), 0);
     while (*argv)
-    {
-        while (**argv)
-        {
-            if (ft_isdash(**argv) && ft_isdash((unsigned char)*(*argv + 1)))
-                return (write(2, "\tTenemos una flag\n", 19), 0);
-            else if (ft_isdash(**argv) && !ft_isdash((unsigned char)*(*argv + 1)) && (**argv + 1))
-            {
-                if (has_morethan_digits(*argv + 1))
-                    return (write(2, "\tArgumento no válido\n", 23), 0);
-                return (write(2, "\tNúmero negativo\n", 19), 0);                               
-            }
-            else if (!**argv || has_morethan_digits(*argv))
-                return (write(2, "\tArgumento no válido\n", 23), 0);
-            else
-                return(write(2, "\tEn próximos episodios...", 26), 0);
-            }
-            (*argv)++;
-        }
-        argv++;
-    return (0);
+	{
+    	if (has_spaces(*argv) && ft_isdigit((unsigned char)*(*argv + 1)))
+			return (write(2, "\t¿String interno?\n", 19), 1);
+		full_dash_check(argv);
+		argv++;
+	}
+	return (0);
 }

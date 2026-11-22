@@ -81,8 +81,10 @@ simple: all
 	./push_swap.out -a
 	./push_swap.out -123424
 	./push_swap.out 123424
+	./push_swap.out ""
+	./push_swap.out "1234 234234"
 
-oclean: simple
+oclean: fclean
 	rm -f *.out
 
 nc:
@@ -92,9 +94,9 @@ nl:
 	norminette libft.h
 
 g:
-# 	git pull
+	git pull
 	git add .
-	git commit -m "Añadido parseo de datos sin espacios $$(date +%H:%M:%S)"
+	git commit -m "Seguimos con parseos y empezamos cosas de listas $$(date +%H:%M:%S)"
 	git push
 	git status
 	git log -1 --oneline
