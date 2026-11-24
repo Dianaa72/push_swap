@@ -6,7 +6,7 @@
 /*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 17:54:47 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 19:27:12 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:28:32 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	swap(t_stack *src)
 {
 	t_node	*second;
 
-	if (!sr
+	if (!src)
 		return ;
 	second = src->head->prev;
 	if (!second)
