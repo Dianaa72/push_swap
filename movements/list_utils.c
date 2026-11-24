@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:41:21 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:21:38 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,16 +84,21 @@ t_node	*node_drag(t_stack *origin, t_node *victim)
 	t_node	*prev;
 	t_node	*next;
 
-	if (!victim)
+	if (!victim || !origin || !origin->head)
 		return (NULL);
 	prev = victim->prev;
 	next = victim->next;
-	if (prev)
-		prev->next = next;
-	if (next)
-		next->prev = prev;
+	if (origin->size == 1)
+		origin->head = NULL;
+	else
+	{
+		prev->next = victim->next;
+		next->prev = victim->prev;
+		if (origin->head == victim)
+			origin->head = next;
+	}
 	victim->next = NULL;
 	victim->prev = NULL;
-	origin->size--;			//Hay que reducir el tamaño del stack?
+	origin->size--;
 	return (victim);
 }
