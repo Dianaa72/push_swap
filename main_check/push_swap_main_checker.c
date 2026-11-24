@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 19:01:36 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/22 14:49:58 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:42:41 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	has_morethan_digits(char *s)
 {
 	while (*s)
 	{
-		if (!ft_isdigit((unsigned char)*s))
+		if (!ft_isdigit(*s))
 			return (1);
 		s++;
 	}
@@ -54,9 +54,9 @@ int	has_nulls(char **s)
 
 int	full_dash_check(char **argv)
 {
-	if (ft_istarget('-', **argv) && ft_istarget('-', (unsigned char)*(*argv + 1)))
+	if (ft_istarget('-', **argv) && ft_istarget('-', **argv + 1))
 		return (write(2, "\tTenemos una flag\n", 19), 1);
-	else if (ft_istarget('-', **argv) && !ft_istarget('-', (unsigned char)*(*argv + 1)) && *(*argv + 1))
+	else if (ft_istarget('-', **argv) && !ft_istarget('-', *(*argv + 1)) && *(*argv + 1))
 	{
 		if (has_morethan_digits(*argv + 1))
 			return (write(2, "\tArgumento no válido\n", 23), 1);
@@ -67,3 +67,5 @@ int	full_dash_check(char **argv)
 	else
 		return (write(2, "\tEn próximos episodios...\n", 27), 1);
 }
+
+

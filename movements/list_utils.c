@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 18:15:32 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:17:50 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_node	*new_node(int value)
     node->index = 0;
 	return (node);
 }
-
 t_node	*node_front(t_stack *stack, t_node *new)
 {
 	t_node *stack_front;
@@ -79,7 +78,7 @@ t_node	*node_back(t_stack *stack, t_node *new)
 	return (new);
 }
 
-t_node *node_drag(t_node *victim)
+t_node *node_drag(t_stack *origin, t_node *victim)
 {
 	t_node *prev;
 	t_node *next;
@@ -94,5 +93,6 @@ t_node *node_drag(t_node *victim)
 		next->prev = prev;
 	victim->next = NULL;
 	victim->prev = NULL;
+	origin->size--;			//Hay que reducir el tamaño del stack?
 	return (victim);
 }

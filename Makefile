@@ -4,6 +4,11 @@ B_NAME = $(basename $(NAME))
 LIB = ./libft/
 MAIN = ./main_check/
 MOVE = ./movements/
+
+MOVEMENTS = \
+	$(MOVE)list_utils.c\
+	$(MOVE)p_s_r.c\
+
 LIBFT = \
 	$(LIB)ft_isalpha.c\
 	$(LIB)ft_isdigit.c\
@@ -52,8 +57,9 @@ LIBFT = \
 SOURCES = \
 	$(LIBFT)\
 	$(MAIN)push_swap_main_checker.c\
-	$(MOVE)list_utils.c\
-
+	$(MOVEMENTS)\
+	
+	
 OBJS = $(SOURCES:.c=.o)
 
 INCLUDES = libft.h
@@ -93,17 +99,18 @@ simple: all
 oclean: fclean
 	rm -f *.out
 	rm -f *.o
+	rm -f */*.o
 
 nc:
 	norminette *.c
 
 nl: 
-	norminette libft.h
+	norminette *.h
 
 g:
 	git pull
 	git add .
-	git commit -m "Añadimos cosas de listas $$(date +%H:%M:%S)"
+	git commit -m "Añadimos aún más cosas de listas $$(date +%H:%M:%S)"
 	git push
 	git status
 	git log -1 --oneline
