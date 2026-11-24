@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string_to_node.c                                   :+:      :+:    :+:   */
+/*   argv_to_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 19:37:21 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:16:32 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:08:20 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+int    num_to_node(t_stack *a, char *s)
+{
+    t_node  *node;
+    
+    if (!a || is_too_much_for_int(s))
+        return (0);
+    node = new_node(ft_atoi(s));
+    if (!node)
+        return (0);
+    return (1);
+}
 
 int is_too_much_for_int(char *s)
 {
     long    num;
     
-    num = ft_atol((const char)*s);
     if (ft_strlen(s) > 11)
         return (1);
-    else if (num > INT_MAX || num < INT_MIN)
+    num = ft_atol((const char)*s);
+    if (num > INT_MAX || num < INT_MIN)
         return (1);
     return (0);
 }
@@ -62,15 +73,16 @@ int    string_to_node(t_stack *a, char *s)
     while(*grid)
     {
         if (is_too_much_for_int(*grid))
-            return (0);
-        if (!a)
-            a = stack_inicializer();
+            return (free(grid), 0);
         if (a)
         {
             value = ft_atoi((const char)*grid);
             node = node_back(a, new_node(value));
         }
+        else
+            return (free(grid), 0);
         *grid++;
     }
+    free(grid);
     return (1)
 }

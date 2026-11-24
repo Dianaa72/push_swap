@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:33:21 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:03:59 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP
 
 /* SYSTEM LIBRARIES */
-# include <stddef.h>
 # include <limits.h> //Para el valor máximo de int
+# include <stddef.h>
 
 /* OWN LIBRARIES */
 # include "libft/libft.h"
@@ -37,12 +37,37 @@ typedef struct s_stack
 	char			name;
 }					t_stack;
 
-// /* LIST UTILS */
+/* STACK UTILS*/
+
+t_stack				*new_stack(char name);
+
+/* LIST UTILS */
 
 t_node				*new_node(int value);
 t_node				*node_front(t_stack *stack, t_node *new);
 t_node				*node_back(t_stack *stack, t_node *new);
 t_node				*node_drag(t_stack *origin, t_node *victim);
+
+/* OPERATIONS */
+
+void				swap(t_stack *src);
+void				push(t_stack *src, t_stack *dst, t_node *node);
+void				rotate(t_stack *src);
+void				r_rotate(t_stack *src);
+
+void				sa(t_stack *a);
+void				pa(t_stack *a, t_stack *b);
+void				ra(t_stack *a);
+void				rra(t_stack *a);
+
+void				sb(t_stack *b);
+void				pb(t_stack *b, t_stack *a);
+void				rb(t_stack *b);
+void				rrb(t_stack *b);
+
+/* FROM ARGV TO NODE FUNCTIONS */
+
+int    num_to_node(t_stack *a, char *s);
 
 /* PUSH SWAP MAIN CHECKER */
 

@@ -110,7 +110,7 @@ nl:
 g:
 	git pull
 	git add .
-	git commit -m "Nombre de carpeta xD $$(date +%H:%M:%S)"
+	git commit -m "Muchas cosas $$(date +%H:%M:%S)"
 	git push
 	git status
 	git log -1 --oneline
