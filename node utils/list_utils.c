@@ -6,7 +6,7 @@
 /*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:27:44 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:41:40 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ t_node	*node_front(t_stack *stack, t_node *new)
 		stack_front = stack->head;		// Defino la cabeza
 		stack_back = stack->head->prev;	// Defino el último
 		new->next = stack->head;		// POV new: nueva cabeza 	-> cabeza
-		new->prev = stack_back;			// POV new: último 			-> nueva cabeza
+		new->prev = stack_back;			// POV new: último 		-> nueva cabeza
 		stack_front->prev = new;		// POV head: nueva cabeza 	<- cabeza
-		stack_back->next = new;			// POV head: último 		-> nueva cabeza
+		stack_back->next = new;			// POV head: último 	-> nueva cabeza
 		stack->head = new;				// Defino la cabeza como nueva cabeza
 	}
 	stack->size++;

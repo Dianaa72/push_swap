@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 20:41:14 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:42:00 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:41:51 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ t_stack	*new_stack(char name)
 	stack->head = NULL;
 	stack->size = 0;
 	stack->name = name;
-	return(stack);
+	return (stack);
 }

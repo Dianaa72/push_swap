@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:03:59 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:43:25 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP.H
+# define PUSH_SWAP.H
 
 /* SYSTEM LIBRARIES */
 # include <limits.h> //Para el valor máximo de int

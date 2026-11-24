@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_main_checker.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 19:01:36 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 19:33:37 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:41:14 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	has_morethan_digits(char *s)
 	return (0);
 }
 
-int has_spaces(char *s)
+int	has_spaces(char *s)
 {
 	while (*s)
 	{
@@ -41,6 +41,7 @@ int has_spaces(char *s)
 	}
 	return (0);
 }
+
 int	has_nulls(char **s)
 {
 	while (*s)
@@ -56,7 +57,8 @@ int	full_dash_check(char **argv)
 {
 	if (ft_istarget('-', **argv) && ft_istarget('-', **argv + 1))
 		return (write(2, "\tTenemos una flag\n", 19), 1);
-	else if (ft_istarget('-', **argv) && !ft_istarget('-', *(*argv + 1)) && *(*argv + 1))
+	else if (ft_istarget('-', **argv) && !ft_istarget('-', *(*argv + 1))
+		&& *(*argv + 1))
 	{
 		if (has_morethan_digits(*argv + 1))
 			return (write(2, "\tArgumento no válido\n", 23), 0);
@@ -67,5 +69,3 @@ int	full_dash_check(char **argv)
 	else
 		return (write(2, "\tEn próximos episodios...\n", 27), 1);
 }
-
-
