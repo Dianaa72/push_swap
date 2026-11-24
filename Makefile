@@ -103,7 +103,7 @@ nl:
 g:
 	git pull
 	git add .
-	git commit -m "Terminamos un par de funciones de listas y añadimos cosas al Makefile $$(date +%H:%M:%S)"
+	git commit -m "Añadimos cosas de listas $$(date +%H:%M:%S)"
 	git push
 	git status
 	git log -1 --oneline

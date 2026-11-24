@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/22 14:47:35 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:17:22 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP
 
 /* SYSTEM LIBRARIES */
-#include <stddef.h>
+# include <stddef.h>
 
 /* OWN LIBRARIES */
 # include "libft/libft.h"
@@ -33,8 +33,15 @@ typedef struct s_stack
 {
 	t_node			*head;
 	size_t			size;
-	char 			name;
+	char			name;
 }					t_stack;
+
+/* LIST UTILS */
+
+t_node				*new_node(int value);
+t_node				*node_front(t_stack *stack, t_node *new);
+t_node				*node_back(t_stack *stack, t_node *new);
+t_node				*node_drag(t_node *victim);
 
 /* PUSH SWAP MAIN CHECKER */
 

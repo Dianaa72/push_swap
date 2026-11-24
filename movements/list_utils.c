@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/22 16:02:52 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 18:15:32 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,22 @@ t_node	*node_back(t_stack *stack, t_node *new)
 	}
 	stack->size++;
 	return (new);
+}
+
+t_node *node_drag(t_node *victim)
+{
+	t_node *prev;
+	t_node *next;
+
+	if (!victim)
+		return (NULL);
+	prev = victim->prev;
+	next = victim->next;
+	if (prev)
+		prev->next = next;
+	if (next)
+		next->prev = prev;
+	victim->next = NULL;
+	victim->prev = NULL;
+	return (victim);
 }
