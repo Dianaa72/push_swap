@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 19:37:21 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:28:29 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 22:58:41 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ long	ft_atol(const char *nptr)
 
 int	string_to_node(t_stack *a, char *s)
 {
-	char **grid;
-	int value;
-	t_node *node;
+	char	**grid;
+	int		value;
+	t_node	*node;
 
 	grid = ft_split(s, " ");
 	value = 0;

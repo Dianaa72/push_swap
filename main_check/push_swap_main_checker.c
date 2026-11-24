@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 19:01:36 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:28:37 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 22:59:06 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	has_spaces(char *s)
 	}
 	return (0);
 }
+
 int	has_nulls(char **s)
 {
 	while (*s)
