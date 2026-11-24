@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 18:48:39 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:08:20 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_stack
 t_node				*new_node(int value);
 t_node				*node_front(t_stack *stack, t_node *new);
 t_node				*node_back(t_stack *stack, t_node *new);
-t_node				*node_drag(t_node *victim);
+t_node				*node_drag(t_stack *origin, t_node *victim);
 
 /* PUSH SWAP MAIN CHECKER */
 

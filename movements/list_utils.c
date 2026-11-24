@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 19:17:50 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:16:19 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,22 @@ t_node	*new_node(int value)
 	node = malloc(sizeof(t_node));
 	if (!node)
 		return (NULL);
-    node->prev = node;
-    node->next = node;
+	node->prev = node;
+	node->next = node;
 	node->value = value;
-    node->index = 0;
+	node->index = 0;
 	return (node);
 }
+
 t_node	*node_front(t_stack *stack, t_node *new)
 {
-	t_node *stack_front;
-	t_node *stack_back;
+	t_node	*stack_front;
+	t_node	*stack_back;
 
 	if (!stack || !new)
 		return (NULL);
 	if (!stack->head)
-	{	
+	{
 		new->next = new;
 		new->prev = new;
 		stack->head = new;
@@ -54,16 +55,16 @@ t_node	*node_front(t_stack *stack, t_node *new)
 
 t_node	*node_back(t_stack *stack, t_node *new)
 {
-	t_node *stack_tail;
-	t_node *stack_head;
+	t_node	*stack_tail;
+	t_node	*stack_head;
 
 	if (!stack || !new)
 		return (NULL);
 	if (!stack->head)
-	{	
+	{
 		new->next = new;
 		new->prev = new;
-		stack->head= new;
+		stack->head = new;
 	}
 	else
 	{
@@ -78,10 +79,10 @@ t_node	*node_back(t_stack *stack, t_node *new)
 	return (new);
 }
 
-t_node *node_drag(t_stack *origin, t_node *victim)
+t_node	*node_drag(t_stack *origin, t_node *victim)
 {
-	t_node *prev;
-	t_node *next;
+	t_node	*prev;
+	t_node	*next;
 
 	if (!victim)
 		return (NULL);
