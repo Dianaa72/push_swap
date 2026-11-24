@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 20:41:14 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:42:00 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:28:22 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*new_stack(char name)
 {
-	t_stack	*stack;
+	t_stack *stack;
 
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
@@ -22,5 +22,5 @@ t_stack	*new_stack(char name)
 	stack->head = NULL;
 	stack->size = 0;
 	stack->name = name;
-	return(stack);
+	return (stack);
 }

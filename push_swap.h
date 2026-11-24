@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:03:59 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:28:06 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,11 @@ void				rrb(t_stack *b);
 
 /* FROM ARGV TO NODE FUNCTIONS */
 
-int    num_to_node(t_stack *a, char *s);
+int					num_to_node(t_stack *a, char *s);
+int					string_to_node(t_stack *a, char *s);
+
+int					is_too_much_for_int(char *s);
+long				ft_atol(const char *nptr);
 
 /* PUSH SWAP MAIN CHECKER */
 
