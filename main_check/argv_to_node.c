@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 19:37:21 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:14:44 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:16:58 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ int    string_to_node(t_stack *a, char *s)
         *grid++;
     }
     free(grid);
-    return (1)
+    return (1);
 }
