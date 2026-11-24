@@ -6,23 +6,11 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 17:54:47 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:04:30 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:32:02 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	push(t_stack *src, t_stack *dst, t_node *data)
-{
-	t_node	*dragged;
-
-	if (!src || !dst || !data)
-		return ;
-	dragged = node_drag(data);
-	if (!dragged)
-		return ;
-	node_front(dst, dragged);
-}
 
 void	swap(t_stack *src)
 {
@@ -34,6 +22,18 @@ void	swap(t_stack *src)
 	if (!second)
 		return ;
 	node_front(src, node_drag(second));
+}
+
+void	push(t_stack *src, t_stack *dst, t_node *node)
+{
+	t_node	*dragged;
+
+	if (!src || !dst || !node)
+		return ;
+	dragged = node_drag(src, node);
+	if (!dragged)
+		return ;
+	node_front(dst, dragged);
 }
 
 void	rotate(t_stack *src)
@@ -50,7 +50,7 @@ void	rotate(t_stack *src)
 
 void	r_rotate(t_stack *src)
 {
-	t_node *next;
+	t_node	*next;
 
 	if (!src)
 		return ;
