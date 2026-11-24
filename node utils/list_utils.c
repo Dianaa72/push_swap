@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 01:52:55 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:47:20 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 23:13:06 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ t_node	*node_front(t_stack *stack, t_node *new)
 	}
 	else
 	{
-		stack_front = stack->head;		// Defino la cabeza
-		stack_back = stack->head->prev;	// Defino el último
-		new->next = stack->head;		// POV new: nueva cabeza 	-> cabeza
-		new->prev = stack_back;			// POV new: último 		-> nueva cabeza
-		stack_front->prev = new;		// POV head: nueva cabeza 	<- cabeza
-		stack_back->next = new;			// POV head: último 	-> nueva cabeza
-		stack->head = new;				// Defino la cabeza como nueva cabeza
+		stack_front = stack->head;			// Defino la cabeza
+		stack_back = stack->head->prev;		// Defino el último
+		new->next = stack->head;			// POV new: nueva cabeza 	-> cabeza
+		new->prev = stack_back;				// POV new: último 		-> nueva cabeza
+		stack_front->prev = new;			// POV head: nueva cabeza 	<- cabeza
+		stack_back->next = new;				// POV head: último 	-> nueva cabeza
+		stack->head = new;					// Defino la cabeza como nueva cabeza
 	}
 	stack->size++;
 	return (new);
@@ -68,12 +68,12 @@ t_node	*node_back(t_stack *stack, t_node *new)
 	}
 	else
 	{
-		stack_tail = stack->head->prev;	// Defino la cola
-		stack_head = stack->head;		// Defino el primero
-		new->next = stack_head;			// POV new: nueva cola 	-> cabeza
-		new->prev = stack_tail;			// POV new: cola 		<- nueva cola
-		stack_tail->next = new;			// POV cola: cola 		-> nueva cola
-		stack_head->prev = new;			// POV cola: cabeza		<- cola
+		stack_tail = stack->head->prev;		// Defino la cola
+		stack_head = stack->head;			// Defino el primero
+		new->next = stack_head;				// POV new: nueva cola 	-> cabeza
+		new->prev = stack_tail;				// POV new: cola 		<- nueva cola
+		stack_tail->next = new;				// POV cola: cola 		-> nueva cola
+		stack_head->prev = new;				// POV cola: cabeza		<- cola
 	}
 	stack->size++;
 	return (new);

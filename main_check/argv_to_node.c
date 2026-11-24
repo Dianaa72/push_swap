@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 19:37:21 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 22:58:41 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/25 00:13:31 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ int	is_too_much_for_int(char *s)
 
 	if (ft_strlen(s) > 11)
 		return (1);
-	num = ft_atol((const char)*s);
+	num = ft_atol(s);
 	if (num > INT_MAX || num < INT_MIN)
 		return (1);
 	return (0);
 }
 
-long	ft_atol(const char *nptr)
+long	ft_atol(char *nptr)
 {
 	int		i;
 	long	sign;
@@ -67,22 +67,24 @@ int	string_to_node(t_stack *a, char *s)
 	int		value;
 	t_node	*node;
 
-	grid = ft_split(s, " ");
+	grid = ft_split(s, ' ');
+	if (!grid)
+		return (0);
 	value = 0;
-	node = NULL;
 	while (*grid)
 	{
 		if (is_too_much_for_int(*grid))
-			return (free(grid), 0);
+			return (free(*grid), 0);
 		if (a)
 		{
-			value = ft_atoi((const char)*grid);
+			value = ft_atoi(*grid);
 			node = node_back(a, new_node(value));
 		}
 		else
-			return (free(grid), 0);
-		*grid++;
+			return (free(*grid), 0);
+		grid++;
 	}
 	free(grid);
 	return (1);
 }
+

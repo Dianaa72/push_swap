@@ -1,48 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   idex_of_disorder.c                                 :+:      :+:    :+:   */
+/*   index_of_disorder.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 21:56:12 by dde-luca          #+#    #+#             */
-/*   Updated: 2026/11/24 22:52:09 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 23:52:56 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-double	compute_disorder(t_stack a)
+double	compute_disorder(t_stack *a)
 {
 	int		mistakes;
 	int		total_pairs;
-	int		i;
-	int		j;
-	t_node	*prev;
-	t_node	*next;
+	t_node	*to_check;
+	t_node	*checker;
 
+	if(!a->head || !a->head->next)
+		return (0.0);
 	mistakes = 0;
 	total_pairs = 0;
-	i = 0;
-	j = 0;
-	prev = a.head;
-
-	while (i < a.size - 1)
+	to_check = a->head;
+	while (to_check->next)
 	{
-		j = i + 1;
-		while (j < a.size)
+		checker = to_check->next;
+		while (checker)
 		{
-			next->next->next
 			total_pairs++;
-			if (prev->value > next->value)
+			if (to_check->value > checker->value)
 				mistakes++;
-			next->next->next;
-			j++;
+			checker = checker->next;
 		}
-		prev = prev->next;
-		i++;
+		to_check = to_check->next;
 	}
 	if (total_pairs == 0)
 		return (0.0);
-	return (mistakes / total_pairs);
+	return ((double) mistakes / total_pairs);
 }

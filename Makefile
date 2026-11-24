@@ -3,11 +3,8 @@ B_NAME = $(basename $(NAME))
 
 LIB = ./libft/
 MAIN = ./main_check/
-MOVE = ./movements/
-
-# MOVEMENTS = \
-# 	$(MOVE)list_utils.c\
-# 	$(MOVE)p_s_r.c\
+N_U = ./node_utils/
+OP = ./operations/
 
 LIBFT = \
 	$(LIB)ft_isalpha.c\
@@ -54,11 +51,26 @@ LIBFT = \
 	$(LIB)ft_lstiter.c\
 	$(LIB)ft_lstmap.c\
 
+MAIN_UTILS = \
+	$(MAIN)argv_to_node.c\
+	$(MAIN)index_of_disorder.c\
+	$(MAIN)push_swap_main_checker.c\
+
+NODE_UTILS = \
+	$(N_U)list_utils.c\
+	$(N_U)stack_utils.c\
+
+OPERATIONS = \
+	$(OP)operations_a.c\
+	$(OP)operations_b.c\
+	$(OP)operations_both.c\
+	$(OP)p_s_r.c\
+
 SOURCES = \
 	$(LIBFT)\
-	$(MAIN)push_swap_main_checker.c\
-	$(MOVEMENTS)\
-	
+	$(MAIN_UTILS)\
+	$(NODE_UTILS)\
+	$(OPERATIONS)\	
 	
 OBJS = $(SOURCES:.c=.o)
 
@@ -85,6 +97,7 @@ re: fclean all
 #OTRAS COSAS ÚTILES#
 
 simple: all
+	make oclean
 	$(CC) -I. -Iincludes $(B_NAME).c $(NAME) -o $(B_NAME).out
 	./push_swap.out
 	./push_swap.out -

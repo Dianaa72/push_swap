@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 22:57:20 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 23:56:44 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ t_node				*node_front(t_stack *stack, t_node *new);
 t_node				*node_back(t_stack *stack, t_node *new);
 t_node				*node_drag(t_stack *origin, t_node *victim);
 
+long long			ft_stacksize(t_node *lst);
+
 /* OPERATIONS */
 
 void				swap(t_stack *src);
@@ -71,7 +73,7 @@ int					num_to_node(t_stack *a, char *s);
 int					string_to_node(t_stack *a, char *s);
 
 int					is_too_much_for_int(char *s);
-long				ft_atol(const char *nptr);
+long				ft_atol(char *nptr);
 
 /* PUSH SWAP MAIN CHECKER */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:23:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:42:44 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 23:47:30 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 
 	if (argc < 2)
 		return (write(2, "\tArgumentos insuficientes\n", 26), 0);
@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 	if (has_nulls(argv))
 		return (write(2, "\tArgumento nulo\n", 16), 0);
 	a = new_stack('a');
-	b = new_stack('b');
+	// b = new_stack('b');
 	while (*argv)
 	{
 		if (has_spaces(*argv))
