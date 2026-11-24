@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 17:54:47 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 20:32:02 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 20:38:40 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap(t_stack *src)
 	second = src->head->prev;
 	if (!second)
 		return ;
-	node_front(src, node_drag(second));
+	node_front(src, node_drag(src, second));
 }
 
 void	push(t_stack *src, t_stack *dst, t_node *node)
