@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_s_r.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 17:54:47 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 19:20:01 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:27:12 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	swap(t_stack *src)
 {
 	t_node	*second;
 
-	if (!src)
+	if (!sr
 		return ;
 	second = src->head->prev;
 	if (!second)
