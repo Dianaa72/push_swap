@@ -5,9 +5,9 @@ LIB = ./libft/
 MAIN = ./main_check/
 MOVE = ./movements/
 
-MOVEMENTS = \
-	$(MOVE)list_utils.c\
-	$(MOVE)p_s_r.c\
+# MOVEMENTS = \
+# 	$(MOVE)list_utils.c\
+# 	$(MOVE)p_s_r.c\
 
 LIBFT = \
 	$(LIB)ft_isalpha.c\

@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 18:48:39 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:58:48 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 /* SYSTEM LIBRARIES */
 # include <stddef.h>
+# include <limits.h> //Para el valor máximo de int
 
 /* OWN LIBRARIES */
 # include "libft/libft.h"
@@ -36,12 +37,12 @@ typedef struct s_stack
 	char			name;
 }					t_stack;
 
-/* LIST UTILS */
+// /* LIST UTILS */
 
-t_node				*new_node(int value);
-t_node				*node_front(t_stack *stack, t_node *new);
-t_node				*node_back(t_stack *stack, t_node *new);
-t_node				*node_drag(t_node *victim);
+// t_node				*new_node(int value);
+// t_node				*node_front(t_stack *stack, t_node *new);
+// t_node				*node_back(t_stack *stack, t_node *new);
+// t_node				*node_drag(t_node *victim);
 
 /* PUSH SWAP MAIN CHECKER */
 

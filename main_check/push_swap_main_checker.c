@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 19:01:36 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 18:42:41 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/24 19:33:37 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	full_dash_check(char **argv)
 	else if (ft_istarget('-', **argv) && !ft_istarget('-', *(*argv + 1)) && *(*argv + 1))
 	{
 		if (has_morethan_digits(*argv + 1))
-			return (write(2, "\tArgumento no válido\n", 23), 1);
+			return (write(2, "\tArgumento no válido\n", 23), 0);
 		return (write(2, "\tNúmero negativo\n", 19), 1);
 	}
 	else if (!**argv || has_morethan_digits(*argv))
-		return (write(2, "\tArgumento no válido\n", 23), 1);
+		return (write(2, "\tArgumento no válido\n", 23), 0);
 	else
 		return (write(2, "\tEn próximos episodios...\n", 27), 1);
 }
