@@ -6,12 +6,12 @@
 /*   By: dde-luca <dde-luca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 21:43:25 by dde-luca         ###   ########.fr       */
+/*   Updated: 2026/11/24 21:45:42 by dde-luca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 /* SYSTEM LIBRARIES */
 # include <limits.h> //Para el valor máximo de int
@@ -67,7 +67,7 @@ void				rrb(t_stack *b);
 
 /* FROM ARGV TO NODE FUNCTIONS */
 
-int    num_to_node(t_stack *a, char *s);
+int					num_to_node(t_stack *a, char *s);
 
 /* PUSH SWAP MAIN CHECKER */
 
