@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 19:37:21 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/25 00:13:31 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/25 13:03:12 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ int	num_to_node(t_stack *a, char *s)
 
 	if (!a || is_too_much_for_int(s))
 		return (0);
-	node = new_node(ft_atoi(s));
+	node = node_back(a, new_node(ft_atoi(s)));
 	if (!node)
 		return (0);
+	ft_printf("\t\tCreado nodo con valor %d\n", node->value);
 	return (1);
 }
 
@@ -29,10 +30,10 @@ int	is_too_much_for_int(char *s)
 	long	num;
 
 	if (ft_strlen(s) > 11)
-		return (1);
+		return (write(2, "\tError: demasiado para int\n", 28), 1);
 	num = ft_atol(s);
 	if (num > INT_MAX || num < INT_MIN)
-		return (1);
+		return (write(2, "\tBien: tenemos un int precioso\n", 32), 1);
 	return (0);
 }
 
@@ -61,30 +62,45 @@ long	ft_atol(char *nptr)
 	return (sign * res);
 }
 
+void	free_grid(char **grid)
+{
+	size_t	i;
+	
+	if (!grid)
+		return ;
+	i = 0;
+	while (*(grid + i))
+	{
+		free(*(grid+ i));
+		i++;
+	}
+	free(grid);
+}
+
 int	string_to_node(t_stack *a, char *s)
 {
 	char	**grid;
+	char	**twin;
 	int		value;
-	t_node	*node;
 
+	if (!a|| !s)
+		return (0);
 	grid = ft_split(s, ' ');
 	if (!grid)
 		return (0);
+	twin = grid;
 	value = 0;
-	while (*grid)
+	while (*twin)
 	{
-		if (is_too_much_for_int(*grid))
-			return (free(*grid), 0);
-		if (a)
-		{
-			value = ft_atoi(*grid);
-			node = node_back(a, new_node(value));
-		}
-		else
-			return (free(*grid), 0);
-		grid++;
+		if (is_too_much_for_int(*twin))
+			return (free_grid(grid), 0);
+		value = ft_atoi(*twin);
+		ft_printf("\t\tCreado nodo con valor %d\n", value);
+		node_back(a, new_node(value));
+		twin++;
 	}
-	free(grid);
+	free_grid(grid);
+	write(2, "\tNodo a partir de string creado\n", 33);
 	return (1);
 }
 

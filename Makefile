@@ -2,6 +2,7 @@ NAME = push_swap.a
 B_NAME = $(basename $(NAME))
 
 LIB = ./libft/
+PF = ./printf/
 MAIN = ./main_check/
 N_U = ./node_utils/
 OP = ./operations/
@@ -51,6 +52,11 @@ LIBFT = \
 	$(LIB)ft_lstiter.c\
 	$(LIB)ft_lstmap.c\
 
+PRINTF = \
+	$(PF)ft_print_utils.c\
+	$(PF)ft_printer_functions.c\
+	$(PF)ft_printf.c\
+
 MAIN_UTILS = \
 	$(MAIN)argv_to_node.c\
 	$(MAIN)index_of_disorder.c\
@@ -68,13 +74,17 @@ OPERATIONS = \
 
 SOURCES = \
 	$(LIBFT)\
+	$(PRINTF)\
 	$(MAIN_UTILS)\
 	$(NODE_UTILS)\
-	$(OPERATIONS)\	
+	$(OPERATIONS)\
 	
 OBJS = $(SOURCES:.c=.o)
 
-INCLUDES = libft.h
+L_H = libft.h
+L_PF = printf.h
+
+INCLUDES = -I. -I$(LIB) -I$(PF) -I$(MAIN) -I$(N_U) -I$(OP)
 
 GIT_USER := $(shell git config user.name)
 CC = cc -Wall -Wextra -Werror
@@ -97,8 +107,7 @@ re: fclean all
 #OTRAS COSAS ÚTILES#
 
 simple: all
-	make oclean
-	$(CC) -I. -Iincludes $(B_NAME).c $(NAME) -o $(B_NAME).out
+	$(CC) $(INCLUDES) $(B_NAME).c $(NAME) -o $(B_NAME).out
 	./push_swap.out
 	./push_swap.out -
 	./push_swap.out --
@@ -107,7 +116,7 @@ simple: all
 	./push_swap.out -123424
 	./push_swap.out 123424
 	./push_swap.out ""
-	./push_swap.out "1234 234234"
+	./push_swap.out "1234 -2344 22424234"
 
 oclean: fclean
 	rm -f *.out

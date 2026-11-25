@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:23:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 23:47:30 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/25 13:05:42 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char *argv[])
 		{
 			if (!has_morethan_digits(*argv))
 				string_to_node(a, *argv);
+			write(2, "\tEl argumento tiene espacios\n", 30);
 		}
 		else if (full_dash_check(argv))
 			num_to_node(a, *argv);
@@ -37,5 +38,6 @@ int	main(int argc, char *argv[])
 			return (0);
 		argv++;
 	}
+	print_stack(a);
 	return (0);
 }

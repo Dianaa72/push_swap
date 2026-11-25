@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 19:01:36 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 22:59:06 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:03:32 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ int	has_morethan_digits(char *s)
 {
 	while (*s)
 	{
-		if (!ft_isdigit(*s))
-			return (1);
-		s++;
+		if (ft_isdigit(*s))
+			s++;
+		else if (has_spaces(s))
+			s++;
+		else
+			return (write (2, "\tAlgo aquí no es num o espacio\n", 33), 1);
 	}
 	return (0);
 }

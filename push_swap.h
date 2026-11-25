@@ -6,7 +6,7 @@
 /*   By: fhidalgo <fhidalgo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 01:29:27 by fhidalgo          #+#    #+#             */
-/*   Updated: 2026/11/24 23:56:44 by fhidalgo         ###   ########.fr       */
+/*   Updated: 2026/11/25 12:43:55 by fhidalgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 /* OWN LIBRARIES */
 # include "libft/libft.h"
+# include "printf/ft_printf.h"
 
 /* STRUCTS */
 
@@ -40,6 +41,8 @@ typedef struct s_stack
 /* STACK UTILS*/
 
 t_stack				*new_stack(char name);
+void				print_stack(t_stack *src);
+unsigned int		stacksize(t_stack *stack);
 
 /* LIST UTILS */
 
