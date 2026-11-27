@@ -28,21 +28,28 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				value;
-	size_t			index;
+	unsigned int			index;
+	unsigned int			pos;
 }					t_node;
 
 typedef struct s_stack
 {
 	t_node			*head;
-	size_t			size;
+	unsigned int			size;
 	char			name;
 }					t_stack;
 
 /* STACK UTILS*/
 
 t_stack				*new_stack(char name);
+void				free_stack(t_stack *victim);
+unsigned int		stack_size_assigner(t_stack *stack);
+
 void				print_stack(t_stack *src);
-unsigned int		stacksize(t_stack *stack);
+
+int					there_are_duplicates(t_stack *stack);
+void 			 	assign_index_to_nodes(t_stack *stack);
+void 				assign_positions_to_nodes(t_stack *stack);
 
 /* LIST UTILS */
 
@@ -50,8 +57,6 @@ t_node				*new_node(int value);
 t_node				*node_front(t_stack *stack, t_node *new);
 t_node				*node_back(t_stack *stack, t_node *new);
 t_node				*node_drag(t_stack *origin, t_node *victim);
-
-long long			ft_stacksize(t_node *lst);
 
 /* OPERATIONS */
 

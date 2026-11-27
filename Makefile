@@ -68,6 +68,7 @@ PARSING = \
 NODE_UTILS = \
 	$(N_U)list_utils.c\
 	$(N_U)stack_utils.c\
+	$(N_U)pos_and_index.c\
 
 OPERATIONS = \
 	$(OP)operations_a.c\

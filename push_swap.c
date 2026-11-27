@@ -36,6 +36,14 @@ int	main(int argc, char *argv[])
 			num_to_node(a, *argv);
 		argv++;
 	}
+	stack_size_assigner(a);
+	if (there_are_duplicates(a))
+	{
+		free_stack(a);
+		return (write(2, "\tError: duplicates found\n", 26), 0);
+	}
+	assign_index_to_nodes(a);
+	assign_positions_to_nodes(a);
 	print_stack(a);
 	return (0);
 }

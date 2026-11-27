@@ -23,6 +23,7 @@ t_node	*new_node(int value)
 	node->next = node;
 	node->value = value;
 	node->index = 0;
+	node->pos = 0;
 	return (node);
 }
 
