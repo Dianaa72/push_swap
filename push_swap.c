@@ -32,10 +32,8 @@ int	main(int argc, char *argv[])
 				string_to_node(a, *argv);
 			write(2, "\tEl argumento tiene espacios\n", 30);
 		}
-		else if (full_dash_check(argv))
+		else if (full_dash_check(argv) && !is_flag_valid(*argv))
 			num_to_node(a, *argv);
-		else
-			return (0);
 		argv++;
 	}
 	print_stack(a);

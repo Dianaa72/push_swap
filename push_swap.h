@@ -77,6 +77,7 @@ int					string_to_node(t_stack *a, char *s);
 
 int					is_too_much_for_int(char *s);
 long				ft_atol(char *nptr);
+int 				word_check(char *src, char *word);
 
 /* PUSH SWAP MAIN CHECKER */
 
@@ -84,7 +85,9 @@ int					ft_istarget(int target, int c);
 int					has_nulls(char **s);
 int					has_morethan_digits(char *s);
 int					has_spaces(char *s);
+
 int					full_dash_check(char **argv);
+int					is_flag_valid(char *argv);
 
 /* LIST UTILS*/
 

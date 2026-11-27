@@ -3,9 +3,10 @@ B_NAME = $(basename $(NAME))
 
 LIB = ./libft/
 PF = ./printf/
-MAIN = ./main_check/
+PARS = ./parsing/
 N_U = ./node_utils/
 OP = ./operations/
+ALG = ./algorithms/
 
 LIBFT = \
 	$(LIB)ft_isalpha.c\
@@ -57,10 +58,12 @@ PRINTF = \
 	$(PF)ft_printer_functions.c\
 	$(PF)ft_printf.c\
 
-MAIN_UTILS = \
-	$(MAIN)argv_to_node.c\
-	$(MAIN)index_of_disorder.c\
-	$(MAIN)push_swap_main_checker.c\
+PARSING = \
+	$(PARS)argv_to_node.c\
+	$(PARS)index_of_disorder.c\
+	$(PARS)push_swap_main_checker.c\
+	$(PARS)main_utils.c\
+	$(PARS)flag_utils.c\
 
 NODE_UTILS = \
 	$(N_U)list_utils.c\
@@ -75,16 +78,17 @@ OPERATIONS = \
 SOURCES = \
 	$(LIBFT)\
 	$(PRINTF)\
-	$(MAIN_UTILS)\
+	$(PARSING)\
 	$(NODE_UTILS)\
 	$(OPERATIONS)\
+	$(ALGORITHMS)\
 	
 OBJS = $(SOURCES:.c=.o)
 
 L_H = libft.h
 L_PF = printf.h
 
-INCLUDES = -I. -I$(LIB) -I$(PF) -I$(MAIN) -I$(N_U) -I$(OP)
+INCLUDES = -I. -I$(LIB) -I$(PF) -I$(PARS) -I$(N_U) -I$(OP)
 
 GIT_USER := $(shell git config user.name)
 CC = cc -Wall -Wextra -Werror
@@ -108,15 +112,16 @@ re: fclean all
 
 simple: all
 	$(CC) $(INCLUDES) $(B_NAME).c $(NAME) -o $(B_NAME).out
-	./push_swap.out
-	./push_swap.out -
-	./push_swap.out --
-	./push_swap.out -1a
-	./push_swap.out -a
-	./push_swap.out -123424
-	./push_swap.out 123424
-	./push_swap.out ""
-	./push_swap.out "1234 -2344 22424234"
+	./push_swap.out --simple "2423424 234 234 234234"
+# 	./push_swap.out --simple --asdfasdf
+# 	./push_swap.out "1234 -2344 22424234"
+# 	./push_swap.out -1a
+# 	./push_swap.out -a
+# 	./push_swap.out -123424
+# 	./push_swap.out 123424
+# 	./push_swap.out ""
+# 	./push_swap.out
+# 	./push_swap.out -
 
 oclean: fclean
 	rm -f *.out

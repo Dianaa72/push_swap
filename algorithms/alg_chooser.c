@@ -1,35 +1,5 @@
 #include "../push_swap.h"
 
-int     there_are_complexity_flags(char *argv)
-{
-    if hay flag de benchmark
-        activar benchmark
-    if hay solo una flag de complejidad y es válida
-        return (1)
-    return (0)
-}
-
-char    *complexity_flag(char *argv)
-{
-    char *c_flag;
-
-    if (there_are_complexity_flags(argv))
-    {
-        extraer flag y guardarla en variable c_flag
-        return (c_flag);
-    }
-    else 
-        return (NULL);
-}
-
-void   is_flag_for_alg(char *c_flag)
-{
-    if (flag != "bench")
-        force_alg(a, b, c_flag);
-    else
-        benchmark (????)
-}
-
 void    adaptive_alg(t_stack *a, t_stack *b)
 {
     if (stacksize(origin) < 5)
