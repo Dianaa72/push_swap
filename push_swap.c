@@ -15,7 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*b;
 
 	if (argc < 2)
 		return (write(2, "\tArgumentos insuficientes\n", 26), 0);
@@ -23,14 +23,14 @@ int	main(int argc, char *argv[])
 	if (has_nulls(argv))
 		return (write(2, "\tArgumento nulo\n", 16), 0);
 	a = new_stack('a');
-	// b = new_stack('b');
+	b = new_stack('b');
 	while (*argv)
 	{
 		if (has_spaces(*argv))
 		{
 			if (!has_morethan_digits(*argv))
 				string_to_node(a, *argv);
-			write(2, "\tEl argumento tiene espacios\n", 30);
+			//write(2, "\tEl argumento tiene espacios\n", 30);
 		}
 		else if (full_dash_check(argv) && !is_flag_valid(*argv))
 			num_to_node(a, *argv);
@@ -44,6 +44,23 @@ int	main(int argc, char *argv[])
 	}
 	assign_index_to_nodes(a);
 	assign_positions_to_nodes(a);
+	print_stack(a);
+	ft_printf("\nOrdenando...\n");
+	if (a->size == 2)
+	{
+		write(1, "Sort2 time\nSteps:\n\n", 20);
+		sort_two(a);
+	}
+	else if (a->size == 3)
+	{
+		write(1, "Sort3 time\nSteps:\n\n", 20);
+		sort_three(a);
+	}
+	else if (a->size <= 5)
+	{
+		write(1, "Sort5 time\nSteps:\n\n", 20);
+		sort_five(a, b);
+	}
 	print_stack(a);
 	return (0);
 }

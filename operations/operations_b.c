@@ -14,20 +14,25 @@
 
 void	sb(t_stack *b)
 {
-	swap(b);
+	if(swap(b))
+		write(1, "sb\n", 3);
 }
 
-void	pb(t_stack *b, t_stack *a)
+void	pb(t_stack *a, t_stack *b)
 {
-	push(a, b, a->head);
+	if(push(a, b, a->head))
+		write(1, "pb\n", 3);
+	ft_printf("\ta = %d, y b = %d\n", a->size, b->size);
 }
 
 void	rb(t_stack *b)
 {
-	rotate(b);
+	if(rotate(b))
+		write(1, "rb\n", 3);
 }
 
 void	rrb(t_stack *b)
 {
-	r_rotate(b);
+	if(r_rotate(b))
+		write(1, "rrb\n", 4);
 }

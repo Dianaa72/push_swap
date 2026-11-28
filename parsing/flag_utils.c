@@ -17,7 +17,7 @@
 
 int is_flag_valid(char *argv)
 {
-    ft_printf("\t\tEntramos en is_flag_valid\n");
+    //ft_printf("\t\tEntramos en is_flag_valid\n");
     if (word_check(argv, "--bench"))
         return (1);
     else if (word_check(argv, "--simple"))
@@ -28,7 +28,7 @@ int is_flag_valid(char *argv)
         return (1);
     else if (word_check(argv, "--adaptive"))
         return (1);
-    ft_printf("\t\tFlag = %s\n", argv);
+    //ft_printf("\t\tFlag = %s\n", argv);
     return (0);
 }
 

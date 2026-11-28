@@ -33,7 +33,7 @@ void	free_grid(char **grid)
 	i = 0;
 	while (*(grid + i))
 	{
-		free(*(grid+ i));
+		free(*(grid + i));
 		i++;
 	}
 	free(grid);
@@ -48,7 +48,7 @@ int	num_to_node(t_stack *a, char *s)
 	node = node_back(a, new_node(ft_atoi(s)));
 	if (!node)
 		return (0);
-	ft_printf("\t\tn2n - Creado nodo con valor %d\n", node->value);
+	//ft_printf("\t\tn2n - Creado nodo con valor %d\n", node->value);
 	return (1);
 }
 
@@ -70,11 +70,11 @@ int	string_to_node(t_stack *a, char *s)
 		if (is_too_much_for_int(*twin))
 			return (free_grid(grid), 0);
 		value = ft_atoi(*twin);
-		ft_printf("\t\ts2n - Creado nodo con valor %d\n", value);
+		//ft_printf("\t\ts2n - Creado nodo con valor %d\n", value);
 		node_back(a, new_node(value));
 		twin++;
 	}
 	free_grid(grid);
-	write(2, "\tNodo a partir de string creado\n", 33);
+	//write(2, "\tNodo a partir de string creado\n", 33);
 	return (1);
 }

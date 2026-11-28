@@ -28,16 +28,22 @@ typedef struct s_node
 	struct s_node	*prev;
 	struct s_node	*next;
 	int				value;
-	unsigned int			index;
-	unsigned int			pos;
+	unsigned int	index;
+	unsigned int	pos;
 }					t_node;
 
 typedef struct s_stack
 {
 	t_node			*head;
-	unsigned int			size;
+	unsigned int	size;
 	char			name;
 }					t_stack;
+
+/* SORTING ALGORITHMS */
+
+void 				sort_two(t_stack *a);
+void 				sort_three(t_stack *a);
+void 				sort_five(t_stack *a, t_stack *b);
 
 /* STACK UTILS*/
 
@@ -58,12 +64,15 @@ t_node				*node_front(t_stack *stack, t_node *new);
 t_node				*node_back(t_stack *stack, t_node *new);
 t_node				*node_drag(t_stack *origin, t_node *victim);
 
+t_node			    *max_node(t_stack *src);
+t_node 				*min_node(t_stack *src);
+
 /* OPERATIONS */
 
-void				swap(t_stack *src);
-void				push(t_stack *src, t_stack *dst, t_node *node);
-void				rotate(t_stack *src);
-void				r_rotate(t_stack *src);
+int				swap(t_stack *src);
+int				push(t_stack *src, t_stack *dst, t_node *node);
+int				rotate(t_stack *src);
+int				r_rotate(t_stack *src);
 
 void				sa(t_stack *a);
 void				pa(t_stack *a, t_stack *b);
@@ -74,6 +83,8 @@ void				sb(t_stack *b);
 void				pb(t_stack *b, t_stack *a);
 void				rb(t_stack *b);
 void				rrb(t_stack *b);
+
+void    			rotate_to_top(t_stack *src, t_node *climber);
 
 /* FROM ARGV TO NODE FUNCTIONS */
 

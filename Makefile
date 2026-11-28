@@ -69,12 +69,17 @@ NODE_UTILS = \
 	$(N_U)list_utils.c\
 	$(N_U)stack_utils.c\
 	$(N_U)pos_and_index.c\
+	$(N_U)print_stack.c\
 
 OPERATIONS = \
 	$(OP)operations_a.c\
 	$(OP)operations_b.c\
 	$(OP)operations_both.c\
 	$(OP)p_s_r.c\
+	$(OP)complex_operations.c\
+
+ALGORITHMS = \
+	$(ALG)little_sorters.c\
 
 SOURCES = \
 	$(LIBFT)\
@@ -113,16 +118,9 @@ re: fclean all
 
 simple: all
 	$(CC) $(INCLUDES) $(B_NAME).c $(NAME) -o $(B_NAME).out
-	./push_swap.out --simple "2423424 234 234 234234"
-# 	./push_swap.out --simple --asdfasdf
-# 	./push_swap.out "1234 -2344 22424234"
-# 	./push_swap.out -1a
-# 	./push_swap.out -a
-# 	./push_swap.out -123424
-# 	./push_swap.out 123424
-# 	./push_swap.out ""
-# 	./push_swap.out
-# 	./push_swap.out -
+	./push_swap.out 1 4 
+	./push_swap.out 1 7 
+	./push_swap.out 1 234 5 33333 6
 
 oclean: fclean
 	rm -f *.out

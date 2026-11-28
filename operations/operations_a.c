@@ -14,20 +14,26 @@
 
 void	sa(t_stack *a)
 {
-	swap(a);
+	if (swap(a))
+		write(1, "sa\n", 3);
+
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack *b, t_stack *a)
 {
-	push(b, a, b->head);
+	if (push(b, a, b->head))
+		write(1, "pa\n", 3);
+	ft_printf("\ta = %d, y b = %d\n", a->size, b->size);
 }
 
 void	ra(t_stack *a)
 {
-	rotate(a);
+	if(rotate(a))
+		write(1, "ra\n", 3);
 }
 
 void	rra(t_stack *a)
 {
-	r_rotate(a);
+	if(r_rotate(a))
+		write(1, "rra\n", 4);
 }

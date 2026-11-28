@@ -47,3 +47,45 @@ void assign_positions_to_nodes(t_stack *stack)
         checker = checker->next;
     }    
 }
+
+t_node    *max_node(t_stack *src)
+{
+    t_node *finder;
+    t_node *max;
+    unsigned int    i;
+
+    if (!src || !src->head)
+        return (NULL);
+    i = 1;
+    max = src->head;
+    finder = src->head->next;
+    while (i < src->size)
+    {
+        if (finder->index > max->index)
+            max = finder;
+        finder = finder->next;
+        i++;
+    }
+    return (max);
+}
+
+t_node  *min_node(t_stack *src)
+{
+    t_node *finder;
+    t_node *min;
+    unsigned int    i;
+
+    if (!src || !src->head)
+        return (NULL);
+    i = 1;
+    min = src->head;
+    finder = src->head->next;
+    while (i < src->size)
+    {
+        if (finder->index < min->index)
+            min = finder;
+        finder = finder->next;
+        i++;
+    }
+    return (min);
+}

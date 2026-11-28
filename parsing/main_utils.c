@@ -29,10 +29,10 @@ int	word_check(char *src, char *word)
 {
 	if (!src || !word)
 		return (0);
-	ft_printf("\t\tComprobamos %s\n", word);
+	//ft_printf("\t\tComprobamos %s\n", word);
 	while (*word)
 	{
-		ft_printf("\t\t\tEntramos en while the word_check %c %c\n", *src, *word);
+		//ft_printf("\t\t\tEntramos en while the word_check %c %c\n", *src, *word);
 		if (!*src || *src != *word)
 			return (0);
 		src++;

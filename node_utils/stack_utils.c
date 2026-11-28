@@ -20,14 +20,13 @@ int	there_are_duplicates(t_stack *stack)
     unsigned int j;
     
     if (!stack || !stack->head)
-        return (1);
+        return (0);
     a = stack->head;
-    b = stack->head;
     i = 0;
     while(i < stack->size)
     {
-        j = 0;
-        b = stack->head;
+        j = i + 1;
+        b = a->next;
         while (j < stack->size)
         {
             if (b->value == a->value)
@@ -59,24 +58,26 @@ unsigned int	stack_size_assigner(t_stack *stack)
 	return (i);
 }
 
-void print_stack(t_stack *src)
+void	free_stack(t_stack *victim)
 {
-    size_t  size;
-    size_t  i;
-    t_node  *checker;
+	unsigned int i;
+	t_node *killer;
+	t_node *accomplice;
 
-    if (!src || !src->head)
-        return ((void)ft_printf("\tStack vacío\n"));
-    checker = src->head;
-    size = src->size;
-    i = 0;
-	ft_printf("\n\n====VALORES DE ESTE STACK %c====\n", src->name);
-    while (i < size)
-    {
-		ft_printf("    - Nodo %u con valor %d e índice %u\n", checker->pos, checker->value, checker->index);
-        checker = checker->next;
-        i++;
-    }
+	if (!victim)
+		return ;
+	i = 0;
+	killer = victim->head;
+	while (i < victim->size)
+	{
+		//ft_printf("\t\tLiberando nodo con valor %d...\n", killer->value);
+		accomplice = killer->next;
+		free(killer);
+		killer = accomplice;
+		i++;
+	}
+	ft_printf("\t\tLiberando stack con tamaño %d...\n", victim->size);
+	free(victim);
 }
 
 t_stack	*new_stack(char name)
@@ -90,24 +91,4 @@ t_stack	*new_stack(char name)
 	stack->size = 0;
 	stack->name = name;
 	return (stack);
-}
-
-void	free_stack(t_stack *victim)
-{
-	unsigned int i;
-	t_node *killer;
-	t_node *accomplice;
-
-	if (!victim)
-		return ;
-	i = 0;
-	killer = victim->head;
-	while (i < victim->size)
-	{
-		accomplice = killer->next;
-		free(killer);
-		killer = accomplice;
-		i++;
-	}
-	free(victim);
 }
