@@ -23,7 +23,6 @@ void	pa(t_stack *b, t_stack *a)
 {
 	if (push(b, a, b->head))
 		write(1, "pa\n", 3);
-	ft_printf("\ta = %d, y b = %d\n", a->size, b->size);
 }
 
 void	ra(t_stack *a)

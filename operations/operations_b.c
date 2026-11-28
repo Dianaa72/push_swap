@@ -22,7 +22,6 @@ void	pb(t_stack *a, t_stack *b)
 {
 	if(push(a, b, a->head))
 		write(1, "pb\n", 3);
-	ft_printf("\ta = %d, y b = %d\n", a->size, b->size);
 }
 
 void	rb(t_stack *b)
